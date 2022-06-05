@@ -91,8 +91,8 @@
         <span class="material-icons-outlined">
           shopping_cart
         </span>
-        <div class="header-top-list-cart-content-number">3</div>
-        <span>$123.00</span>
+        <div class="header-top-list-cart-content-number cart-count">0</div>
+        <span class="cart-total">$00.00</span>
       </div>
       <div class="header-top-list-cart-dropdown">
         <div class="header-top-list-cart-dropdown-product">
@@ -107,7 +107,7 @@
                 culpa ea.
               </div>
               <div class="header-top-list-cart-dropdown-product-item-content-body">
-                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$123.00</div>
+                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$00.00</div>
                 <div class="header-top-list-cart-dropdown-product-item-content-body-quantity">x <span>3</span>
                 </div>
               </div>
@@ -124,7 +124,7 @@
                 culpa ea.
               </div>
               <div class="header-top-list-cart-dropdown-product-item-content-body">
-                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$123.00</div>
+                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$00.00</div>
                 <div class="header-top-list-cart-dropdown-product-item-content-body-quantity">x <span>3</span>
                 </div>
               </div>
@@ -141,7 +141,7 @@
                 culpa ea.
               </div>
               <div class="header-top-list-cart-dropdown-product-item-content-body">
-                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$123.00</div>
+                <div class="header-top-list-cart-dropdown-product-item-content-body-price">$00.00</div>
                 <div class="header-top-list-cart-dropdown-product-item-content-body-quantity">x <span>3</span>
                 </div>
               </div>
@@ -155,16 +155,16 @@
               <span class="material-icons-outlined header-top-list-cart-dropdown-action-delete-icon">
                 delete
               </span>
-              <span>Clear Your Cart</span>
+              <span onclick="clearCart()">Clear Your Cart</span>
             </span>
             <span>
               <span>Subtotal:</span>
-              <span>$123.00</span>
+              <span class="cart-total">$00.00</span>
             </span>
           </div>
           <div class="header-top-list-cart-dropdown-action-view">
             <a href="cart.html" class="btn btn-round-4 btn-primary">View Cart</a>
-            <a href="checkout.html" class="btn btn-round-4 btn-hover-primary">Checkout</a>
+            <a href="#" onclick="checkout()" class="btn btn-round-4 btn-hover-primary">Checkout</a>
           </div>
         </div>
       </div>
@@ -443,7 +443,7 @@
             <span class="material-icons-outlined">
               shopping_cart
             </span>
-            <div class="header-navbar-fixed-right-cart-number">3</div>
+            <div class="header-navbar-fixed-right-cart-number cart-count">0</div>
           </a>
           <div class="header-top-list-cart-dropdown header-navbar-fixed-right-cart-dropdown">
             <div class="header-top-list-cart-dropdown-product">
@@ -512,16 +512,16 @@
                   <span class="material-icons-outlined header-top-list-cart-dropdown-action-delete-icon">
                     delete
                   </span>
-                  <span>Clear Your Cart</span>
+                  <span onclick="clearCart()">Clear Your Cart</span>
                 </span>
                 <span>
                   <span>Subtotal:</span>
-                  <span>$123.00</span>
+                  <span class="cart-total">$123.00</span>
                 </span>
               </div>
               <div class="header-top-list-cart-dropdown-action-view">
                 <a href="cart.html" class="btn btn-round-4 btn-primary">View Cart</a>
-                <a href="checkout.html" class="btn btn-round-4 btn-hover-primary">Checkout</a>
+                <a href="#" onclick="checkout()" class="btn btn-round-4 btn-hover-primary">Checkout</a>
               </div>
             </div>
           </div>
@@ -541,10 +541,12 @@
             <div class="header-navbar-user-dropdown-heading">
               <p>Hi, Ngoc Anh</p>
             </div>
-            <div style="display: none;" class="header-navbar-user-dropdown-item header-navbar-user-dropdown-item-hidden">
+            <div style="display: none;"
+              class="header-navbar-user-dropdown-item header-navbar-user-dropdown-item-hidden">
               <a href="cart.html">Cart</a>
             </div>
-            <div style="display: none;" class="header-navbar-user-dropdown-item header-navbar-user-dropdown-item-hidden">
+            <div style="display: none;"
+              class="header-navbar-user-dropdown-item header-navbar-user-dropdown-item-hidden">
               <a href="wishlist.html">Wishlist</a>
             </div>
             <div class="header-navbar-user-dropdown-item">
@@ -562,3 +564,51 @@
     </div>
   </div>
 </div>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+
+  });
+  // cart local storage
+  var storageKey = "cart";
+  function cartHeader() {
+    var cart = localStorage.getItem(storageKey);
+    if (cart) {
+      cart = JSON.parse(cart);
+      var cartTotal = 0;
+      for (var i = 0; i < cart.length; i++) {
+        cartTotal += cart[i].quantity * cart[i].price;
+      }
+      let cart_count = $('.cart-count');
+      for (var i = 0; i < cart_count.length; i++) {
+        cart_count[i].innerHTML = cart.length;
+      }
+      let cart_total = $('.cart-total');
+      for (var i = 0; i < cart_total.length; i++) {
+        cart_total[i].innerHTML = "$" + cartTotal;
+      }
+    }
+    $("#cart-mini").show();
+    $("#cart-mini").css("display", "flex");
+    $("#cart-mini").css("opacity", "1");
+    $("#cart-mini").css("transition", "all 0.5s ease-in-out");
+  }
+
+  function clearCart() {
+    localStorage.removeItem(storageKey);
+    showCart();
+    cartHeader();
+  }
+  showCart();
+  // checkout
+  function checkout() {
+    clearCart();
+    alert("Thank you for your purchase!");
+    window.location.href = "index.html";
+    showCart();
+  }
+  cartHeader();
+</script>
