@@ -6,3 +6,51 @@
     overflow: scroll;
   }
 }
+
+.product-add-title {
+  font-size: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #484848;
+  font-weight: 600;
+}
+.product-add {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.product-add-form-button button:first-child {
+  color: #484848;
+  border-color: #484848;
+  margin-right: 10px;
+}
+.body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;  
+}
+.product-add-form-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product-add-form-input:not(:last-of-type) {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.product-add-form-input label {
+  font-size: 14px;
+  margin-right: 20px;
+  width: 150px;
+}
+
+.product-add-form-input input, textarea {
+  font-size: 14px;
+  padding: 5px 15px;
+  outline: none;
+  border:  1px solid #484848;
+}
+

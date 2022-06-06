@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1654320492338,
@@ -76,6 +76,34 @@
                 {
                     "date": 1654340835518,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,8 @@\n       </li>\r\n       <li><a href=\"customers.html\">Customers</a></li>\r\n       <li><a href=\"orders.html\">Orders</a></li>\r\n     </ul>\r\n-    <div class=\"header-navbar-login\">\r\n-      <a href=\"login.html\">Login</a>\r\n-      /\r\n-      <a href=\"register.html\">Register</a>\r\n-    </div>\r\n   </div>\r\n   <div class=\"header-navbar-fixed full-size-container\">\r\n     <ul>\r\n       <li><a href=\"dashboard.html\">Dashboard</a></li>\r\n"
+                },
+                {
+                    "date": 1654486279902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n             <div class=\"header-navbar-user-dropdown-heading\">\r\n               <p>Hi, Ngoc Anh</p>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"profile.html\">Profile</a>\r\n+              <a href=\"products.html\">Profile</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"ordered.html\">Ordered List</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1654486289437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n             <div class=\"header-navbar-user-dropdown-heading\">\r\n               <p>Hi, Ngoc Anh</p>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"products.html\">Profile</a>\r\n+              <a href=\"products.html\">Products Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"ordered.html\">Ordered List</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1654486295683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"products.html\">Products Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"ordered.html\">Ordered List</a>\r\n+              <a href=\"o.html\">Ordered List</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"login.html\">Logout</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1654486304391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"products.html\">Products Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"o.html\">Ordered List</a>\r\n+              <a href=\"orders.html\">Orders Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"login.html\">Logout</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1654486311439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,8 +67,14 @@\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"orders.html\">Orders Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n+              <a href=\"products.html\">Products Manage</a>\r\n+            </div>\r\n+            <div class=\"header-navbar-user-dropdown-item\">\r\n+              <a href=\"orders.html\">Orders Manage</a>\r\n+            </div>\r\n+            <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"login.html\">Logout</a>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1654486321943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"orders.html\">Orders Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"products.html\">Products Manage</a>\r\n+              <a href=\"categories.html\">Categories Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"orders.html\">Orders Manage</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1654486330289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"categories.html\">Categories Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n-              <a href=\"orders.html\">Orders Manage</a>\r\n+              <a href=\"customers.html\">Customers Manage</a>\r\n             </div>\r\n             <div class=\"header-navbar-user-dropdown-item\">\r\n               <a href=\"login.html\">Logout</a>\r\n             </div>\r\n"
                 }
             ],
             "date": 1654320492338,
